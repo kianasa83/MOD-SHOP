@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحه محصول - MOD SHOP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  <nav class="navbar navbar-expand-lg header">
+    <div class="container">
+      <a class="navbar-brand text-light fw-bold" href="index.html">MOD SHOP</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item px-3"><a class="nav-link active" href="index.html">صفحه اصلی</a></li>
+          <li class="nav-item px-3"><a class="nav-link" href="cart.html">🛒 سبد خرید</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>  <main class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img id="product-image" src="img/default.jpg" alt="محصول" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h2 id="product-title">عنوان محصول</h2>
+        <p id="product-description">توضیح کوتاه درباره محصول</p><div class="mb-3">
+      <strong>قیمت:</strong> <span id="product-price" class="text-success fw-bold">---</span>
+      <span id="product-old-price" class="text-muted text-decoration-line-through ms-3">---</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="size" class="form-label">انتخاب سایز:</label>
+      <select id="size" class="form-select">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" onclick="addToCart()">افزودن به سبد خرید 🛒</button>
+  </div>
+</div>
+
+  </main>  <footer class="mt-5 p-4 text-center bg-dark text-light">
+    تمامی حقوق محفوظ است © 2025 MOD SHOP
+  </footer>  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const products = {
+      1: { title: "مانتو بهاری", price: "450,000 تومان", oldPrice: "500,000 تومان", image: "img/photo_2025-05-25_23-21-40.jpg", description: "مانتو نخی مناسب بهار" },
+      2: { title: "مانتو تابستانی", price: "590,000 تومان", oldPrice: "700,000 تومان", image: "img/photo_2025-05-25_23-21-31.jpg", description: "مانتو خنک و سبک برای تابستان" },
+      3: { title: "مانتو مجلسی", price: "450,000 تومان", oldPrice: "470,000 تومان", image: "img/photo_2025-05-25_23-22-19.jpg", description: "مناسب مهمانی‌ها و مجالس رسمی" },
+      4: { title: "مانتو کژوال", price: "390,000 تومان", oldPrice: "420,000 تومان", image: "img/photo_2025-05-25_23-22-25.jpg", description: "استایل روزمره" },
+      5: { title: "مانتو نخی", price: "550,000 تومان", oldPrice: "620,000 تومان", image: "img/photo_2025-05-27_14-07-43.jpg", description: "نخی و سبک برای استفاده روزانه" },
+      6: { title: "مانتو دخترانه", price: "450,000 تومان", oldPrice: "520,000 تومان", image: "img/photo_2025-05-27_14-07-51.jpg", description: "مناسب نوجوانان و دختران جوان" },
+      7: { title: " مدل 1", price: "380,000 تومان", oldPrice: "420,000 تومان", image: "img/photo_2025-05-28_22-16-59.jpg", description: " طرح‌دار سنتی" },
+      8: { title: " مدل 2", price: "420,000 تومان", oldPrice: "490,000 تومان", image: "img/photo_2025-05-28_22-16-46.jpg", description: "با کیفیت دوخت بالا" },
+      9: { title: " ساده", price: "350,000 تومان", oldPrice: "400,000 تومان", image: "img/photo_2025-05-28_22-16-52.jpg", description: "مدل ساده و شیک" },
+      10: { title: " سنتی", price: "500,000 تومان", oldPrice: "550,000 تومان", image: "img/photo_2025-05-28_22-16-56.jpg", description: "با طراحی اصیل ایرانی" },
+      11: { title: "مانتو طرح دار", price: "500,000 تومان", oldPrice: "550,000 تومان", image: "img/photo_2025-06-06_12-12-05.jpg", description: "مدل جدید و پرطرفدار" },
+    };
+
+    const product = products[id];
+    if (product) {
+      document.getElementById('product-title').textContent = product.title;
+      document.getElementById('product-description').textContent = product.description;
+      document.getElementById('product-price').textContent = product.price;
+      document.getElementById('product-old-price').textContent = product.oldPrice;
+      document.getElementById('product-image').src = product.image;
+    } else {
+      document.querySelector('main').innerHTML = '<h3 class="text-center">محصول یافت نشد</h3>';
+    }
+
+    function addToCart() {
+      const size = document.getElementById('size').value;
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      cart.push({ id, title: product.title, price: product.price, image: product.image, size });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'cart.html';
+    }
+  </script></body>
+</html>

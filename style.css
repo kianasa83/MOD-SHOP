@@ -1,0 +1,281 @@
+body {
+  background-color: #f4e7cf;
+  color: #5a3e1b;
+  font-family: 'Vazir', sans-serif;
+  padding-top: 70px;
+  
+}
+
+.header {
+  background-color: #a67c00;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header a {
+  color: #f5f1e9;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header a:hover {
+  color: #ffe7a3;
+  text-decoration: none;
+}
+
+.cart-link{
+  text-decoration: none;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.25rem;
+  color: #7a5c1f;
+}
+
+.most-sold-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin-bottom: 50px;
+}
+
+.most-sold-item {
+  display: inline-block;
+  background: #f0e6d2;
+  border-radius: 12px;
+  width: 200px;
+  margin: 0 15px;
+  vertical-align: top;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.most-sold-item:hover {
+  transform: scale(1.05);
+}
+
+.most-sold-item img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  height: 180px;
+  object-fit: cover;
+}
+
+.most-sold-item .info {
+  padding: 10px;
+  text-align: center;
+ 
+}
+
+.most-sold-item .title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #5a3e1b;
+  
+}
+
+.most-sold-item .price {
+  color: #a67c00;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.most-sold-item .old-price {
+  color: #b08900;
+  font-size: 0.9rem;
+  text-decoration-line: line-through;
+}
+
+footer {
+  text-align: center;
+  padding: 80px;
+  background-color: #a67c00;
+  color: #f5f1e9;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+.main-foote {
+  width: 30%;
+  height: auto;
+  float: right;
+  padding: 15px;
+}
+
+.btn-custom {
+  background-color: #a67c00;
+  color: #f5f1e9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #d4b400;
+  color: #3a2600;
+}
+
+.navbar-nav {
+  direction: rtl;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.6rem;
+}
+
+.dropdown-menu-custom {
+  display: none;
+  position: absolute;
+  background-color: #fff8e1;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-menu-custom li {
+  padding: 8px 20px;
+ 
+}
+
+.dropdown-menu-custom li a {
+  color: #5a3e1b;
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+}
+
+.dropdown-menu-custom li a:hover {
+  background-color: #d4b400;
+  color: #3a2600;
+  border-radius: 4px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu-custom {
+  display: block;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  padding: 8px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  direction: ltr;
+}
+
+.search-box input[type="text"] {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 30px;
+  direction: rtl;
+}
+
+.search-btn {
+  border: none;
+  background-color: #a67c00;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.search-btn:hover {
+  background-color: #3a2600;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+@media (max-width: 992px) {
+  .welcome-section h1 {
+    font-size: 2.5rem;
+  }
+  .welcome-section p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+    }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+  .welcome-section p {
+    font-size: 1rem;
+  }
+
+  .most-sold-container {
+    white-space: normal;
+  }
+  .most-sold-item {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+
+  }
+  .cart-container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .navbar-nav {
+    text-align: center;
+  }
+  .btn-custom {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
